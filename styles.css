@@ -66,5 +66,16 @@ nav > ul > li {
 .button-style {
     padding: 1em;
     border-radius: 3em;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: .8em;
+}
+
+.button-style:hover {
+    background-color: #0056b3;
 }
 
