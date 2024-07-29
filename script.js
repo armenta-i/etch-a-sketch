@@ -20,7 +20,7 @@ function changeGrid() {
 function createGrid(numPixels){
     let pixelTotal = numPixels * numPixels;
     console.log("Total pixels: " + pixelTotal)
-    for(let j = 0; j <= pixelTotal; j++){
+    for(let j = 0; j < pixelTotal; j++){
         const pixel = document.createElement("div");
         pixel.classList.add("pixel");
         mainContainer.appendChild(pixel);
