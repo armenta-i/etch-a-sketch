@@ -10,10 +10,20 @@
 </head>
 <body>
     <nav>
-        <h1>Sketch Pad</h1>
+        <div class="website-title">
+            <img src="./imgs/web-icon.png" alt="Website Icon" height="50" width="auto">
+            <h1>Sketch Pad</h1>
+        </div>
         <ul>
-            <li>
+            <!-- <li>
                 <button class="button-style" onclick="changeGrid()">Grid size</button>
+            </li> -->
+            <li class="list-item">
+                 <label for="">Select color:</label>
+                <input type="color" value="#000000" id="color-value">
+            </li>
+            <li>
+                <button class="button-style" onclick="randomColor()">Random Color</button>
             </li>
             <li>
                 <button class="button-style" onclick="resetGrid()" id="reset-button">Reset</button>  
