@@ -1,8 +1,9 @@
 const mainContainer = document.querySelector('.sketch-container');
 let count = 0;
-let gridSize = 16;
+const gridSize = 16;
 let pixelColor = 'black';
 let random = false;
+const containerSize = 512;
 
 function changeGrid() {
     // Deletes current grid and creates a new one, MISSING
@@ -11,31 +12,27 @@ function changeGrid() {
         alert("Number must be less than 100");
         newSize = prompt("Enter size of new grid");
     }
-    gridSize = Number(newSize);
     while(mainContainer.hasChildNodes()) {
         mainContainer.removeChild(mainContainer.firstChild);
-        console.log("child removed")
     }
-    createGrid(gridSize);
+    createGrid(newSize);
 }
 
 function createGrid(numPixels){
     // Creates a grid based of total number of pixels
     let pixelTotal = numPixels * numPixels;
-    console.log("numPixels: " + numPixels)
-    console.log("Total pixels: " + pixelTotal)
     for(let j = 0; j < pixelTotal; j++){
         const pixel = document.createElement("div");
         pixel.classList.add("pixel");
-        pixel.style = 'width : ' + numPixels;
-        pixel.style = 'height : ' + numPixels;
+        // Had to put the width and height of every single pixel here instead of css so the grid would be created correctly.
+        pixel.style.width =  containerSize/numPixels + "px";
+        pixel.style.height=  containerSize/numPixels + "px";
         mainContainer.appendChild(pixel);
     }
 }
 
 function main() {
     createGrid(gridSize);
-
     // Event listener to color single pixel of grid
     let grid = document.querySelector(".sketch-container");
     grid.addEventListener('mouseover', (e) => {
@@ -48,8 +45,6 @@ function main() {
     inputColor.addEventListener('input', (e) => {
         pixelColor = inputColor.value;
     })
-    console.log("Color: " + inputColor.value);
-
 }
 
 // Function to reset grid to basic 16x16
@@ -62,10 +57,10 @@ function resetGrid() {
 // Generates a random color
 function randomColor() {
     random = true;
+    // Get 3 random values for rgb
     let red = Math.floor(Math.random() * 255);
     let blue = Math.floor(Math.random() * 255);
     let green = Math.floor(Math.random() * 255);
-
     pixelColor = "rgb(" + red + "," + blue + "," + green + ")";
 }
 

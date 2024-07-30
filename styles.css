@@ -75,22 +75,24 @@ nav > ul > li {
 
 .pixel {
     background-color: whitesmoke;
-    width: 2em;
-    height: 2em;
+    /* width: 2em;
+    height: 2em; */
     border: .001em solid rgba(0, 0, 0, 0.100);
     box-sizing: border-box;
 }
 
 .button-style {
     padding: 1em;
-    border-radius: 3em;
-    padding: .625em 1.25em;
+    border-radius: 999em;
     background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-size: .8em;
+    font-size: .5em;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: center;
 }
 
 .button-style:hover {
